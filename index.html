@@ -1,0 +1,142 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ayan Nath</title>
+<link rel="stylesheet" href="assets/css/main.css">
+<meta name="author" content="Ayan Nath">
+<meta name="description" content="Ayan Nath's home page">
+<link rel="shortcut icon" href="assets/icons/favicon.ico">
+
+<style>
+:root {
+  --text-color: #1c1c1c;
+  --muted-color: #666;
+  --highlight-color: #1f6f3f;
+}
+</style>
+
+<!-- MathJax -->
+<script src="assets/js/math.js" type="text/javascript"> </script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"> </script>
+
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="name-block">
+        <p><strong>Ayan Nath</strong><br>
+        MIT Mathematics<br>
+        ayannath at mit.edu
+        </p>
+      </div>
+
+      <nav>
+        <a class="nav-link active" data-target="home">home</a>
+        <a class="nav-link" data-target="seminars">seminars</a>
+        <a class="nav-link" data-target="notes">notes</a>
+        <a class="nav-link" data-target="misc">misc</a>
+      </nav>
+    </div>
+
+    <div class="content">
+      <div id="home">
+          <p>I am a PhD student at <a href="https://math.mit.edu/" target="_blank">MIT</a>
+          starting from Fall 2024. </p>
+          My advisors are <a href="https://math.mit.edu/~poonen/"
+                             target="_blank">Bjorn Poonen</a> and <a
+                             href="https://sites.google.com/a/bc.edu/keerthi/home"
+                             target="_blank">Keerthi Madapusi</a>.
+        <p>Previously, I was an undergraduate student at <a href="https://www.cmi.ac.in/" target="_blank">
+            Chennai Mathematical Institute</a>.</p>
+        <p>I am interested in number theory. </p>
+      </div>
+
+      <div id="seminars">
+
+<ul> 
+    <li> <a href="./perfectoid">Reading seminar: Perfectoid Spaces (Fall 2024)</a></li>
+</ul>
+      </div>
+
+      <div id="notes">
+
+<ul>
+<li>Almost Purity <a
+            href="./perfectoid/almost-purity.pdf" target="_blank">[pdf]</a></li>
+<li>Tilting equivalence for perfectoid algebras <a
+            href="./perfectoid/tilting-equivalence.pdf" target="_blank">[pdf]</a></li>
+
+    <li>Special cycles on unitary Shimura varieties <a
+            href="./theta-series.pdf" target="_blank">[pdf]</a></li>
+    <li>Hodge-Tate decomposition for abelian varieties with good reduction <a
+            href="./hodge-tate-decomposition.pdf" target="_blank">[pdf]</a></li>
+    <li>Moduli schemes of elliptic curves <a
+            href="./deligne-rapoport.pdf" target="_blank">[pdf]</a></li>
+    <li>Deligne's construction of $\ell$-adic Galois representations attached to normalized cuspidal newforms of weight $k\ge 2$ <a
+            href="./deligne-galois-reps.pdf" target="_blank">[pdf]</a></li>
+    <li>Ribet's converse to Herbrand's theorem <a
+            href="./ribet-herbrand.pdf" target="_blank">[pdf]</a></li>
+    <li>Galois representations attached to modular forms of weight 1 <a
+            href="./deligne-serre.pdf" target="_blank">[pdf]</a></li>
+    <li>Tate uniformization of Drinfeld modules <a href="./tate-uniformization.pdf" target="_blank">[pdf]</a></li>
+    <li>An introduction to the mod $p$ local Langlands correspondence for
+        $\text{GL}_2(\mathbb Q_p)$ <a href="./vsrp-report.pdf" target="_blank">[pdf]</a> <a href="./vsrp-slides.pdf" target="_blank">[slides]</a></li>
+    <li>Alterations <a
+            href="./alterations.pdf" target="_blank">[pdf]</a> <a
+            href="./alterations-slides.pdf" target="_blank">[slides]</a> 
+    </li>
+    <li>The Hochster-Roberts theorem <a href="./hochster-roberts.pdf" target="_blank">[pdf]</a> </li>
+    <li> (old) Olympiad handout on analytic number theory <a href="./olympiad-analytic-nt.pdf"
+            target="_blank">[pdf]</a> <a href="https://artofproblemsolving.com/community/q1h2251201p17343711" target="_blank">[AoPS Page]</a></li>
+</ul>
+      </div>
+
+      <div id="misc">
+
+<ul>
+    <li><a href="./acpi-patching.html">Deep sleep on GNU/Linux via
+            patched ACPI tables</a><br/></li>
+<!-- 
+    <li><a href="./faq.html">Olympiad FAQs (old, and possibly outdated)</a></li>
+-->
+</ul>
+      </div>
+    </div>
+
+    <!--
+<footer style="text-align: center; font-size: 0.8rem; color: var(--muted-color); margin-top: 2rem;">
+  <p>&copy; Ayan Nath | Made by ChatGPT.</p>
+</footer>
+    -->
+  </div>
+
+<script>
+  const links = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('.content > div');
+
+  function activateSection(targetId) {
+    links.forEach(l => {
+      l.classList.toggle('active', l.dataset.target === targetId);
+    });
+    sections.forEach(sec => {
+      sec.classList.toggle('active', sec.id === targetId);
+    });
+  }
+
+  // Handle nav link clicks
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      const target = link.dataset.target;
+      activateSection(target);
+      history.replaceState(null, null, `#${target}`); // update URL
+    });
+  });
+
+  // Handle loading from a hash (e.g. index.html#notes)
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1);
+      const target = hash && document.getElementById(hash) ? hash : 'home';
+      activateSection(target);
+    });
+</script>
+</body>
