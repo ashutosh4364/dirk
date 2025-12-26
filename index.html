@@ -33,7 +33,7 @@
       <nav>
         <a class="nav-link active" data-target="home">home</a>
         <a class="nav-link" data-target="magazine solutions">magazine solutions</a>
-        <a class="nav-link" data-target="notes">notes</a>
+        <a class="nav-link" data-target="texts">texts</a>
         <a class="nav-link" data-target="misc">misc</a>
       </nav>
     </div>
@@ -54,11 +54,11 @@
 </ul>
       </div>
 
-      <div id="notes">
+      <div id="texts">
 
 <ul>
-<li>Tilting equivalence for perfectoid algebras <a
-            href="./perfectoid/tilting-equivalence.pdf" target="_blank">[pdf]</a></li>
+<li>N. Jacobson, Basic Algebra I<a
+            href="./BAI NJ.pdf" target="_blank">[pdf]</a></li>
 </ul>
       </div>
 
@@ -100,7 +100,7 @@
     });
   });
 
-  // Handle loading from a hash (e.g. index.html#notes)
+  // Handle loading from a hash (e.g. index.html#texts)
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
       const target = hash && document.getElementById(hash) ? hash : 'home';
